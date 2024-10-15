@@ -5,3 +5,7 @@
 build/
 
 __pycache__/
+
+app/db/data/
+
+app/model/model/
