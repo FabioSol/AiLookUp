@@ -1,7 +1,7 @@
 
 def download():
     from sentence_transformers import SentenceTransformer
-    from model import model_path
+    from app.model import model_path
     # Step 1: Load the SBERT model
     model = SentenceTransformer('all-MiniLM-L6-v2')
 

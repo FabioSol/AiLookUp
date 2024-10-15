@@ -48,7 +48,8 @@ class FileController:
         if not File.select().where(File.name == path.split("/")[-1]).exists():
             file_name= path.split('/')[-1]
         else:
-            raise ValueError(f'File name "{path.split('/')[-1]}" already in use')
+            slash='/'
+            raise ValueError(f'File name "{path.split(slash)[-1]}" already in use')
         if path.endswith('.csv'):
             file_type = "csv"
             df = pd.read_csv(path)
@@ -56,7 +57,8 @@ class FileController:
             file_type = "xlsx"
             df = pd.read_excel(path)
         else:
-            raise NotImplementedError(f'File type "{path.split('.')[-1]}" not supported')
+            dot = '.'
+            raise NotImplementedError(f'File type "{path.split(dot)[-1]}" not supported')
 
         if all([description_col in df.columns for description_col in description_cols]):
             description_cols = description_cols

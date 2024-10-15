@@ -8,7 +8,7 @@ class UploadButton(QPushButton):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         icon = QIcon()
-        svg_renderer = QSvgRenderer('static/upload_icon.svg')
+        svg_renderer = QSvgRenderer('app/static/upload_icon.svg')
         pixmap = QPixmap(24, 24)
         pixmap.fill(Qt.transparent)
         painter = QPainter(pixmap)

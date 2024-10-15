@@ -2,8 +2,8 @@
 
 def build():
     import peewee
-    from db.schema import File,FileRow,Vector
-    from db import data_path,files_path
+    from app.db.schema import File,FileRow,Vector
+    from app.db import data_path,files_path
     import os
 
     os.makedirs(data_path, exist_ok=True)
