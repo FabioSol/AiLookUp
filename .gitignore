@@ -9,3 +9,8 @@ __pycache__/
 app/db/data/
 
 app/model/model/
+
+dist/
+
+*.spec
+
