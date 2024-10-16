@@ -68,7 +68,7 @@ class FileUploadDialog(QDialog):
         self.table.setFocusPolicy(Qt.NoFocus)
 
         for col in range(df.shape[1]):
-            self.table.horizontalHeader().setSectionResizeMode(col, QHeaderView.Stretch)
+            self.table.horizontalHeader().setSectionResizeMode(col, QHeaderView.Interactive)
             for row in range(df.shape[0]):
                 self.table.setItem(row, col, QTableWidgetItem(str(df.iat[row, col])))
                 item = self.table.item(row, col)

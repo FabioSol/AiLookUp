@@ -49,7 +49,7 @@ class FindPage(QWidget):
         self.table.setHorizontalHeaderLabels(df.columns)
 
         for col in range(df.shape[1]):
-            self.table.horizontalHeader().setSectionResizeMode(col, QHeaderView.Stretch)
+            self.table.horizontalHeader().setSectionResizeMode(col, QHeaderView.Interactive)
             for row in range(df.shape[0]):
                 item = QTableWidgetItem(str(df.iat[row, col]))
                 item.setFlags(item.flags() & ~Qt.ItemIsEditable)
