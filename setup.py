@@ -29,5 +29,7 @@ freeze(
         'script': 'app/main.py'
     }],
     data_files=data_files,
-    options={'packages':['PyQt5', 'PyQt5.QtCore', 'PyQt5.QtGui', 'PyQt5.QtWidgets']}
+    options={
+        'includes':['PyQt5.QtWidgets'],
+        'packages':['PyQt5', 'PyQt5.QtCore', 'PyQt5.QtGui', 'PyQt5.QtWidgets']}
 )

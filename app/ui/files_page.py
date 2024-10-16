@@ -1,10 +1,10 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QMessageBox, QSizePolicy, \
     QHeaderView
-from db.controller import FileController
-from ui.components.delete_button import DeleteButton
-from ui.components.upload_button import UploadButton
-from ui.upload_dialog import FileUploadDialog
+from app.db.controller import FileController
+from app.ui.components.delete_button import DeleteButton
+from app.ui.components.upload_button import UploadButton
+from app.ui.upload_dialog import FileUploadDialog
 
 
 class FilesPage(QWidget):

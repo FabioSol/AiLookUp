@@ -1,10 +1,10 @@
-from PyQt5.QtWidgets import QApplication
-from app import MainWindow
+from app.app import MainWindow
+import PyQt5.QtWidgets
 import sys
 import os
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app = PyQt5.QtWidgets.QApplication(sys.argv)
     with open("app/static/style.qss", "r") as f:
         stylesheet = f.read()
     app.setStyleSheet(stylesheet)

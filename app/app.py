@@ -1,13 +1,13 @@
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QStackedWidget, QDesktopWidget
-from ui.files_page import FilesPage
-from ui.find_page import FindPage
+from app.ui.files_page import FilesPage
+from app.ui.find_page import FindPage
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("AiLookUp")
-        self.setWindowIcon(QIcon('static/logo.ico'))
+        self.setWindowIcon(QIcon('app/static/logo.ico'))
 
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)

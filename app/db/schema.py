@@ -1,5 +1,5 @@
 import peewee
-from db import data_path
+from app.db import data_path
 
 class BaseModel(peewee.Model):
     class Meta:

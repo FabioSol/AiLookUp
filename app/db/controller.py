@@ -4,9 +4,9 @@ import numpy as np
 import pandas as pd
 from peewee import JOIN, Database
 
-from db.schema import File,FileRow,Vector
-from db import files_path
-from model.model import Model
+from app.db.schema import File,FileRow,Vector
+from app.db import files_path
+from app.model.model import Model
 import ast
 
 embeddings_model = Model()

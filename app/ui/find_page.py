@@ -2,8 +2,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem, QWidget, QVBoxLayout, QLineEdit, QTableWidget, QSizePolicy, QHeaderView, \
     QPushButton, QHBoxLayout
 
-from db.controller import FileController
-from ui.components.back_button import BackButton
+from app.db.controller import FileController
+from app.ui.components.back_button import BackButton
 
 
 class FindPage(QWidget):

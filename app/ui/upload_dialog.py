@@ -4,9 +4,9 @@ from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QColor
 import pandas as pd
 
-from db.controller import FileController
-from ui.components.browse_button import BrowseButton
-from ui.components.upload_button import UploadButton
+from app.db.controller import FileController
+from app.ui.components.browse_button import BrowseButton
+from app.ui.components.upload_button import UploadButton
 
 
 class FileUploadDialog(QDialog):

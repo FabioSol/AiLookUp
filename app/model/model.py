@@ -1,5 +1,5 @@
 from sentence_transformers import SentenceTransformer
-from model import model_path
+from app.model import model_path
 
 
 class Model:
