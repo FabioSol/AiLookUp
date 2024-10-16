@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QDialog, QLineEdit, QFileDialog, QTableWidget, QHBoxLayout, QVBoxLayout, \
-    QTableWidgetItem, QLabel, QSizePolicy, QHeaderView
+    QTableWidgetItem, QLabel, QSizePolicy, QHeaderView, QApplication
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QColor
 import pandas as pd
@@ -111,8 +111,8 @@ class FileUploadDialog(QDialog):
         self.upload_button.setStyleSheet("")
 
         selected_columns_names = [self.table.horizontalHeaderItem(i).text() for i in self.selected_columns]
-
+        QApplication.setOverrideCursor(Qt.WaitCursor)
         f = FileController.new(file_path, selected_columns_names)
         f.save()
-
+        QApplication.restoreOverrideCursor()
         self.close()
