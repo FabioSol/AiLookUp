@@ -3,12 +3,14 @@ from PyQt5.QtGui import QIcon, QPixmap, QPainter
 from PyQt5.QtSvg import QSvgRenderer
 from PyQt5.QtCore import QSize, Qt
 
+from app.ui import static_path
+
 
 class BackButton(QPushButton):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         icon = QIcon()
-        svg_renderer = QSvgRenderer('app/static/back_icon.svg')
+        svg_renderer = QSvgRenderer(static_path+'/back_icon.svg')
         pixmap = QPixmap(24, 24)
         pixmap.fill(Qt.transparent)
         painter = QPainter(pixmap)

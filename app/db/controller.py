@@ -9,7 +9,6 @@ from app.db import files_path
 from app.model.model import Model
 import ast
 
-embeddings_model = Model()
 
 class FileController:
     def __init__(self, df,file_name, file_type, description_cols, file_id):
@@ -18,6 +17,7 @@ class FileController:
         self.file_type = file_type
         self.description_cols = description_cols
         self.file_id = file_id
+        self.embeddings_model = None
 
     @classmethod
     def find(cls, file_name):
@@ -82,7 +82,9 @@ class FileController:
 
     def save_rows(self):
         description_series = self.df.apply(lambda row: " ".join([row[description_col] for description_col in self.description_cols]), axis=1)
-        embeddings = embeddings_model.encode(description_series.values)
+        if self.embeddings_model is None:
+            self.embeddings_model = Model()
+        embeddings = self.embeddings_model.encode(description_series.values)
         for idx, vec in enumerate(embeddings):
             v_id = Vector.create(vector=vec)
             FileRow.create(file_id=self.file_id, row_id=idx, vector_id=v_id)
@@ -103,7 +105,9 @@ class FileController:
         return np.array([np.frombuffer(row.vector, dtype=np.float32) for row in query])
 
     def get_similarity(self,prompt):
-        v1 = embeddings_model.encode([prompt])[0]
+        if self.embeddings_model is None:
+            self.embeddings_model = Model()
+        v1 = self.embeddings_model.encode([prompt])[0]
         v1_norm = np.linalg.norm(v1)
 
         def similarity(v2):
